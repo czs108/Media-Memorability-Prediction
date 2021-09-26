@@ -1,8 +1,6 @@
 \documentclass[conference, compsoc]{IEEEtran}
 \IEEEoverridecommandlockouts
-\usepackage{cite}
 \usepackage[numbers]{natbib}
-\usepackage[hyphenbreaks]{breakurl}
 \usepackage[hyphens]{url}
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -57,7 +55,7 @@ The detail of the task is introduced in \cite{DBLP:journals/corr/abs-1807-01052}
 6000 videos are provided to participants as a training set with different pre-computed features.
 Each video also has two memorability scores calculated from the short-term and long-term memorability tests as ground truth.
 In this paper, I used the final classification layer of 3D Convolutional Neural Networks (C3D) \cite{DBLP:journals/corr/TranBFTP14}, Histogram of Motion Patterns (HMP) \cite{6116516}, {Local Binary Patterns (LBP) \cite{572934} and their combinations as features,
-training models with Linear Regression, K-Nearest Neighbors Regression, Support Vector Regression, Random Forest Regression and AdaBoost Regression.
+training models with Linear Regression, $K$-Nearest Neighbors Regression, Support Vector Regression, Random Forest Regression and AdaBoost Regression.
 The models were evaluated using the Spearman's correlation coefficient.
 Finally, a test set containing 2000 videos is provided for memorability predictions.
 
@@ -119,7 +117,7 @@ Where $v_{i}^{j}$ is the $i$th value from the $j$th frame. And 122 is the larges
 
 \subsection{Models}
 Five models were trained with all features,
-including Linear Regression, K-Nearest Neighbors Regression, Support Vector Regression, Random Forest Regression and AdaBoost Regression.
+including Linear Regression, $K$-Nearest Neighbors Regression, Support Vector Regression, Random Forest Regression and AdaBoost Regression.
 The mean of five Spearman's correlation coefficient scores were recorded using 5-fold cross-validation for each short-term and long-term memorability test.
 All models were imported from \verb|scikit-learn| library.
 
@@ -127,7 +125,7 @@ All models were imported from \verb|scikit-learn| library.
     \item Linear Regression: It fits a linear model to minimize the residual sum of squares between targets and predicted values.
     The implementation class is \verb|linear_model.LinearRegression|.
 
-    \item K-Nearest Neighbors Regression: It predicts a value based on the $k$ nearest neighbors' mean in the training set.
+    \item $K$-Nearest Neighbors Regression: It predicts a value based on the $k$ nearest neighbors' mean in the training set.
     The implementation class is \verb|neighbors.KNeighborsRegressor| and its default $k$ is 5.
 
     \item Support Vector Regression: It is derived from Support Vector Classification.
@@ -158,7 +156,7 @@ From Fig.~\ref{fig:dev-set-memo-distribution}, we can see that the long-term mem
 
 \subsection{Short-term Prediction}
 Table.~\ref{tbl:short-spearman-scores} and Fig.~\ref{fig:short-spearman-scores} show Spearman's scores for short-term predictions.
-The best combination was Random Forest with C3D + HMP. Its Spearman's score of 5-fold cross-validation was 0.334.
+The best combination was Random Forest with C3D + HMP. Its Spearman's score of 5-fold cross-validation was $0.334$.
 Random Forest also had better performance than other models for each feature.
 
 \begin{table}[htbp]
@@ -166,14 +164,14 @@ Random Forest also had better performance than other models for each feature.
     \begin{center}
         \begin{tabularx}{\linewidth}{c*5{>{\centering\arraybackslash}X}}
             \toprule
-            Feature & Linear & K-Nearest & Support Vector & Random Forest & AdaBoost \\
+            Feature & Linear & $K$-Nearest & Support Vector & Random Forest & AdaBoost \\
             \midrule
-            C3D & 0.276 & 0.183 & 0.248 & 0.304 & 0.257 \\
-            HMP & $-0.007$ & 0.199 & 0.278 & 0.295 & 0.244 \\
-            LBP & 0.181 & 0.121 & 0.250 & 0.279 & 0.190 \\
-            C3D + LBP & 0.236 & 0.219 & 0.264 & 0.316 & 0.260 \\
-            C3D + HMP & 0.007 & 0.199 & 0.292 & 0.334 & 0.269 \\
-            LBP + HMP & $-0.007$ & 0.222 & 0.290 & 0.325 & 0.259 \\
+            C3D & $0.276$ & $0.183$ & $0.248$ & $0.304$ & $0.257$ \\
+            HMP & $-0.007$ & $0.199$ & $0.278$ & $0.295$ & $0.244$ \\
+            LBP & $0.181$ & $0.121$ & $0.250$ & $0.279$ & $0.190$ \\
+            C3D + LBP & $0.236$ & $0.219$ & $0.264$ & $0.316$ & $0.260$ \\
+            C3D + HMP & $0.007$ & $0.199$ & $0.292$ & $0.334$ & $0.269$ \\
+            LBP + HMP & $-0.007$ & $0.222$ & $0.290$ & $0.325$ & $0.259$ \\
             \bottomrule
         \end{tabularx}
     \end{center}
@@ -186,9 +184,9 @@ Random Forest also had better performance than other models for each feature.
     \label{fig:short-spearman-scores}
 \end{figure}
 
-The performance of Linear and K-Nearest Neighbors Regression highly depended on feature selection.
-If the feature contained HMP, Linear Regression's Spearman's scores were almost equal to 0 and significantly less than K-Nearest Neighbors.
-Otherwise, it performed relatively well and better than K-Nearest Neighbors.
+The performance of Linear and $K$-Nearest Neighbors Regression highly depended on feature selection.
+If the feature contained HMP, Linear Regression's Spearman's scores were almost equal to zero and significantly less than $K$-Nearest Neighbors.
+Otherwise, it performed relatively well and better than $K$-Nearest Neighbors.
 Overall, Linear Regression was the most unstable model.
 
 Support Vector and AdaBoost Regression got the second and third highest Spearman's scores in most predictions.
@@ -197,21 +195,21 @@ Support Vector and AdaBoost Regression got the second and third highest Spearman
 Table.~\ref{tbl:long-spearman-scores} and Fig.~\ref{fig:long-spearman-scores} show Spearman's scores for long-term predictions.
 All models' long-term Spearman's scores were much less than their short-term scores.
 The best model for long-term predictions was also Random Forest, but the feature was C3D + LBP.
-Its Spearman's score of 5-fold cross-validation was 0.144.
+Its Spearman's score of 5-fold cross-validation was $0.144$.
 
 \begin{table}[htbp]
     \caption{Spearman's scores for long-term predictions}
     \begin{center}
         \begin{tabularx}{\linewidth}{c*5{>{\centering\arraybackslash}X}}
             \toprule
-            Feature & Linear & K-Nearest & Support Vector & Random Forest & AdaBoost \\
+            Feature & Linear & $K$-Nearest & Support Vector & Random Forest & AdaBoost \\
             \midrule
-            C3D & 0.114 & 0.064 & 0.093 & 0.130 & 0.113 \\
-            HMP & $-0.008$ & 0.060 & 0.111 & 0.114 & 0.079 \\
-            LBP & 0.057 & 0.038 & 0.078 & 0.107 & 0.066 \\
-            C3D + LBP & 0.082 & 0.033 & 0.094 & 0.144 & 0.107 \\
-            C3D + HMP & $-0.007$ & 0.064 & 0.114 & 0.133 & 0.090 \\
-            LBP + HMP & $-0.005$ & 0.044 & 0.112 & 0.114 & 0.079 \\
+            C3D & $0.114$ & $0.064$ & $0.093$ & $0.130$ & $0.113$ \\
+            HMP & $-0.008$ & $0.060$ & $0.111$ & $0.114$ & $0.079$ \\
+            LBP & $0.057$ & $0.038$ & $0.078$ & $0.107$ & $0.066$ \\
+            C3D + LBP & $0.082$ & $0.033$ & $0.094$ & $0.144$ & $0.107$ \\
+            C3D + HMP & $-0.007$ & $0.064$ & $0.114$ & $0.133$ & $0.090$ \\
+            LBP + HMP & $-0.005$ & $0.044$ & $0.112$ & $0.114$ & $0.079$ \\
             \bottomrule
         \end{tabularx}
     \end{center}
@@ -224,12 +222,12 @@ Its Spearman's score of 5-fold cross-validation was 0.144.
     \label{fig:long-spearman-scores}
 \end{figure}
 
-The comparison of Linear and K-Nearest Neighbors Regression was the same as short-term predictions.
+The comparison of Linear and $K$-Nearest Neighbors Regression was the same as short-term predictions.
 HMP caused severe negative impacts on Linear Regression.
 
 In long-term predictions, Support Vector and Random Forest Regression had similar performance if the feature contained HMP.
-For example, when the feature was only HMP, their Spearman's scores were 0.111 and 0.114, respectively.
-When the feature was LBP + HMP, their Spearman's scores were 0.112 and 0.114.
+For example, when the feature was only HMP, their Spearman's scores were $0.111$ and $0.114$, respectively.
+When the feature was LBP + HMP, their Spearman's scores were $0.112$ and $0.114$.
 This relation was not so evident in short-term predictions.
 
 \subsection{Predicted Memorability Distribution for Test Set}
@@ -320,7 +318,7 @@ It seems that the most memorable videos tend to have large LBP values at the mid
 
 \subsection{Using Principal Component Analysis on HMP}
 Considering that the dimension of HMP was larger than the number of training samples, I conducted a Principal Component Analysis (PCA) on HMP to reduce its dimension.
-The ratio of explained variance was 99.99\% if I kept the most 1000 critical dimensions.
+The ratio of explained variance was $99.99\%$ if I kept the most 1000 critical dimensions.
 Fig.~\ref{fig:pca-short-spearman-scores} shows the comparison of Spearman's scores for short-term predictions using only HMP in two cases with and without the PCA.
 
 \begin{figure}[htbp]
@@ -330,7 +328,7 @@ Fig.~\ref{fig:pca-short-spearman-scores} shows the comparison of Spearman's scor
 \end{figure}
 
 PCA only provided a significant performance improvement for Linear Regression.
-For K-Nearest Neighbors Regression, it helped nothing.
+For $K$-Nearest Neighbors Regression, it helped nothing.
 To make matters worse, PCA reduced the prediction effect of the other three models.
 
 

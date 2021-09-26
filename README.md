@@ -1,8 +1,10 @@
 # Media Memorability Prediction
 
 [![Python](badges/Python-3.10.svg)](https://www.python.org)
+![LaTeX](badges/LaTeX.svg)
 [![Jupyter](badges/Made-with-Jupyter.svg)](https://jupyter.org)
 [![License](badges/License-GPL-3.0.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![DOI](https://zenodo.org/badge/366136051.svg)](https://zenodo.org/badge/latestdoi/366136051)
 
 ## About the Project
 
@@ -101,6 +103,21 @@ The official evaluation metric will be the *Spearman*'s rank correlation between
 ## License
 
 Distributed under the *GNU General Public License*. See `LICENSE` for more information.
+
+## Citing
+
+```tex
+@software{chenzs108_2021_4822231,
+  author       = {Chen Zhenshuo},
+  title        = {czs108/Media-Memorability-Prediction: v1.0.0},
+  month        = may,
+  year         = 2021,
+  publisher    = {Zenodo},
+  version      = {v1.0.0},
+  doi          = {10.5281/zenodo.4822231},
+  url          = {https://doi.org/10.5281/zenodo.4822231}
+}
+```
 
 ## Contact
 
