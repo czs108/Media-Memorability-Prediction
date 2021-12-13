@@ -53,7 +53,7 @@ A set of pre-extracted visual features are provided to the participants to the t
 - *C3D*
 
   |    Item     | Description                                                  |
-  | :---------: | ------------------------------------------------------------ |
+  | :---------: | :----------------------------------------------------------- |
   |   Outputs   | The final classification layer of the *3D Convolutional Neural Networks*. |
   | File Format | `.txt` file.                                                 |
   |   Feature   | A single list of numbers on one line, the dimension is *101*. |
@@ -61,7 +61,7 @@ A set of pre-extracted visual features are provided to the participants to the t
 - *HMP*
 
   |    Item     | Description                                                  |
-  | :---------: | ------------------------------------------------------------ |
+  | :---------: | :----------------------------------------------------------- |
   |   Outputs   | *Histogram of Motion Patterns*.                              |
   | File Format | `.txt` file.                                                 |
   |   Feature   | A single list of pairs of numbers with format `bin:number` on one line, the dimension is *6075*. |
@@ -71,8 +71,8 @@ The next feature was extracted on three key-frames, the *first* (*0*), *one-thir
 - *LBP*
 
   |    Item     | Description                                                  |
-  | :---------: | ------------------------------------------------------------ |
-  |   Outputs   | *Local Binary Patterns*, calculated for patches of *8 x 15* pixels. |
+  | :---------: | :----------------------------------------------------------- |
+  |   Outputs   | *Local Binary Patterns*, calculated for patches of *8* × *15* pixels. |
   | File Format | `.txt` file.                                                 |
   |   Feature   | A single list of numbers on one line, the dimension depends on the image size. |
 
